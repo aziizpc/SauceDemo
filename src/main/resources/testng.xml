@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SauceDemo">
+	<listeners>
+		<listener class-name="com.sd.qa.util.ExtentReporterNG"></listener>
+	</listeners>
+	<test name="Sauce Demo Tests" thread-count="5">
+		<classes>
+			<class name="com.sd.qa.testcases.ProductsPageTest" />
+			<class name="com.sd.qa.testcases.LoginPageTest" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
