@@ -3,6 +3,8 @@ package com.sd.qa.base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -30,8 +32,9 @@ public class TestBase {
 	public TestBase() {
 		try {
 			prop = new Properties();
+			Path configPath = Paths.get("src", "main", "java", "com", "sd", "qa", "config", "config.properties");
 			FileInputStream ip = new FileInputStream(
-					System.getProperty("user.dir") + "\\src\\main\\java\\com\\sd\\qa\\config\\config.properties");
+					System.getProperty("user.dir") + configPath.toString());
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -78,7 +81,4 @@ public class TestBase {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
-	
-	
-
 }
