@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -16,12 +18,14 @@ import org.openqa.selenium.TakesScreenshot;
 import com.sd.qa.base.TestBase;
 
 public class TestUtil extends TestBase {
-    
-    public static final String PAGE_LOAD_STRATEGY = "NORMAL";
-    public static final long IMPLICIT_WAIT = 10;
-    public static final String TESTDATA_SHEET_PATH = System.getProperty("user.dir") + "\\src\\main\\java\\com\\sd\\qa\\testdata\\sauce_testdata.xlsx";
-    
-    static Workbook book;
+
+	public static final String PAGE_LOAD_STRATEGY = "NORMAL";
+	public static final long IMPLICIT_WAIT = 10;
+	public static final Path configPath = Paths.get("src", "main", "java", "com", "sd", "qa", "testdata",
+			"sauce_testdata.xlsx");
+	public static final String TESTDATA_SHEET_PATH = System.getProperty("user.dir") + File.separator + configPath;
+
+	static Workbook book;
 	static Sheet sheet;
 	static JavascriptExecutor js;
 
@@ -94,5 +98,5 @@ public class TestUtil extends TestBase {
 //		js.executeScript("$.growl.warning({ title: 'Warning!', message: 'your warning message goes here' });");
 		Thread.sleep(5000);
 	}
-    
+
 }

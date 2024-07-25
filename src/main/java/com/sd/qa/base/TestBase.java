@@ -1,8 +1,11 @@
 package com.sd.qa.base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -30,8 +33,9 @@ public class TestBase {
 	public TestBase() {
 		try {
 			prop = new Properties();
+			Path configPath = Paths.get("src", "main", "java", "com", "sd", "qa", "config", "config.properties");
 			FileInputStream ip = new FileInputStream(
-					System.getProperty("user.dir") + "\\src\\main\\java\\com\\sd\\qa\\config\\config.properties");
+					System.getProperty("user.dir") + File.separator + configPath.toString());
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -43,7 +47,9 @@ public class TestBase {
 	public static void initialization() {
 		String browserName = prop.getProperty("browser");
 		if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "D:\\Dev\\Driver\\chromedriver.exe");
+			Path configPath = Paths.get("drivers", "chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver",
+					System.getProperty("user.dir") + File.separator + configPath.toString());
 			ChromeOptions options = new ChromeOptions();
 			options.setPageLoadStrategy(PageLoadStrategy.valueOf(TestUtil.PAGE_LOAD_STRATEGY)); // NORMAL / EAGER / NONE
 			options.addArguments("--remote-allow-origins=*");
@@ -56,29 +62,26 @@ public class TestBase {
 		}
 
 		WebDriverListener listener = new CustomWebDriverListener();
-		driver = new EventFiringDecorator<>(listener).decorate(driver);		
-		
+		driver = new EventFiringDecorator<>(listener).decorate(driver);
+
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
 		driver.get(prop.getProperty("url"));
 	}
-	
+
 	public static void waitForCorrectUrl(int seconds, String resource) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
 		wait.until(ExpectedConditions.urlContains(resource));
 	}
-	
+
 	public static void waitForElementToBeClickable(int seconds, WebElement ele) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
 		wait.until(ExpectedConditions.elementToBeClickable(ele));
 	}
-	
+
 	public static void waitForPresenceOfElement(int seconds, By locator) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
-	
-	
-
 }

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.sd.qa.testcases.ProductsPageTest">
+      <class name="com.sd.qa.testcases.LoginPageTest">
         <methods>
+          <include name="loginTest"/>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="addToShoppingCartUsingDp_2"/>
         </methods>
-      </class> <!-- com.sd.qa.testcases.ProductsPageTest -->
+      </class> <!-- com.sd.qa.testcases.LoginPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
