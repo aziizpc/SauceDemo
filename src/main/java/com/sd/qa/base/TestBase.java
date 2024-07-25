@@ -32,7 +32,7 @@ public class TestBase {
 	public TestBase() {
 		try {
 			prop = new Properties();
-			Path configPath = Paths.get("src", "main", "java", "com", "sd", "qa", "config", "config.properties");
+			Path configPath = Paths.get("", "src", "main", "java", "com", "sd", "qa", "config", "config.properties");
 			FileInputStream ip = new FileInputStream(
 					System.getProperty("user.dir") + configPath.toString());
 			prop.load(ip);
