@@ -84,4 +84,5 @@ public class TestBase {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
+
 }
