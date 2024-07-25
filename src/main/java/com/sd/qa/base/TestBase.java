@@ -46,16 +46,27 @@ public class TestBase {
 
 	public static void initialization() {
 		String browserName = prop.getProperty("browser");
+		String os = System.getProperty("os.name").toLowerCase();
+		String driverPath = System.getProperty("user.dir") + File.separator + "drivers" + File.separator;
+
 		if (browserName.equals("chrome")) {
-			Path configPath = Paths.get("drivers", "chromedriver.exe");
-			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + File.separator + configPath.toString());
+			if (os.contains("win")) {
+				driverPath += "chromedriver.exe";
+			} else if (os.contains("linux")) {
+				driverPath += "chromedriver";
+			}
+			System.setProperty("webdriver.chrome.driver", driverPath);
 			ChromeOptions options = new ChromeOptions();
 			options.setPageLoadStrategy(PageLoadStrategy.valueOf(TestUtil.PAGE_LOAD_STRATEGY)); // NORMAL / EAGER / NONE
 			options.addArguments("--remote-allow-origins=*");
 			driver = new ChromeDriver(options);
 		} else if (browserName.equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "<Path to ff driver>");
+			if (os.contains("win")) {
+				driverPath += "geckodriver.exe";
+			} else if (os.contains("linux")) {
+				driverPath += "geckodriver";
+			}
+			System.setProperty("webdriver.gecko.driver", driverPath);
 			FirefoxOptions options = new FirefoxOptions();
 			options.setPageLoadStrategy(PageLoadStrategy.valueOf(TestUtil.PAGE_LOAD_STRATEGY));
 			driver = new FirefoxDriver(options);
