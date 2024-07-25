@@ -1,5 +1,6 @@
 package com.sd.qa.base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -32,9 +33,9 @@ public class TestBase {
 	public TestBase() {
 		try {
 			prop = new Properties();
-			Path configPath = Paths.get("", "src", "main", "java", "com", "sd", "qa", "config", "config.properties");
+			Path configPath = Paths.get("src", "main", "java", "com", "sd", "qa", "config", "config.properties");
 			FileInputStream ip = new FileInputStream(
-					System.getProperty("user.dir") + configPath.toString());
+					System.getProperty("user.dir") + File.separator + configPath.toString());
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
