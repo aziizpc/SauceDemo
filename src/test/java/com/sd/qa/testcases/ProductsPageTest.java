@@ -11,11 +11,12 @@ import org.testng.annotations.Test;
 import com.sd.qa.base.TestBase;
 import com.sd.qa.pages.LoginPage;
 import com.sd.qa.pages.ProductsPage;
+import com.sd.qa.util.RetryLogic;
 import com.sd.qa.util.TestUtil;
 
 public class ProductsPageTest extends TestBase {
 	
-	private static final Logger logger = LogManager.getLogger(ProductsPageTest.class);	// Check imports
+	private static final Logger logger = LogManager.getLogger(ProductsPageTest.class); // Check imports
 
 	LoginPage loginPage;
 	ProductsPage productsPage;
@@ -56,7 +57,7 @@ public class ProductsPageTest extends TestBase {
 	}
 
 	@DataProvider
-	public Object[][] getItemsDataFromExcel_1() {				// Sheet with single column
+	public Object[][] getItemsDataFromExcel_1() { // Sheet with single column
 		return TestUtil.getTestData("AddToShoppingCart");
 	}
 
@@ -66,7 +67,7 @@ public class ProductsPageTest extends TestBase {
 	}
 
 	@DataProvider
-	public Object[][] getItemsDataFromExcel_2() {				// Sheet with multiple columns
+	public Object[][] getItemsDataFromExcel_2() { // Sheet with multiple columns
 		return TestUtil.getTestData("AddAllToShoppingCart");
 	}
 
@@ -84,6 +85,11 @@ public class ProductsPageTest extends TestBase {
 	@Test(priority = 6)
 	public void applySorting() {
 		productsPage.sortTheItems("Price (low to high)");
+	}
+
+	@Test(priority = 7, retryAnalyzer = RetryLogic.class)	// 'Implement' interface IAnnotationTransformer so that
+	public void testRetryLogic() {							// .. we don't have to mention 'retryAnalyzer =' 
+		Assert.assertEquals(true, false);					// everywhere
 	}
 
 	@AfterMethod

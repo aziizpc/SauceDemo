@@ -1,101 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="5" total="7" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-25T12:43:20Z" name="Default suite" finished-at="2024-07-25T12:43:41Z" duration-ms="20882">
+  <suite started-at="2024-08-07T18:07:43Z" name="Default suite" finished-at="2024-08-07T18:07:54Z" duration-ms="11483">
     <groups>
     </groups>
-    <test started-at="2024-07-25T12:43:20Z" name="Default test" finished-at="2024-07-25T12:43:41Z" duration-ms="20882">
-      <class name="com.sd.qa.testcases.ProductsPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.sd.qa.testcases.ProductsPageTest@22db8f4]" started-at="2024-07-25T18:13:21Z" name="setUp" finished-at="2024-07-25T18:13:27Z" duration-ms="6448" status="PASS">
+    <test started-at="2024-08-07T18:07:43Z" name="Default test" finished-at="2024-08-07T18:07:54Z" duration-ms="11483">
+      <class name="com.sd.qa.testcases.LoginPageTest2">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.sd.qa.testcases.LoginPageTest2@5454d35e]" started-at="2024-08-07T23:37:43Z" name="setUp" finished-at="2024-08-07T23:37:52Z" duration-ms="9321" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="addToShoppingCartUsingDp_2(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:5, instance:com.sd.qa.testcases.ProductsPageTest@22db8f4]" started-at="2024-07-25T18:13:27Z" name="addToShoppingCartUsingDp_2" data-provider="getItemsDataFromExcel_2" finished-at="2024-07-25T18:13:29Z" duration-ms="1694" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Sauce Labs Backpack]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Sauce Labs Bike Light]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Sauce Labs Bolt T-Shirt]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Sauce Labs Fleece Jacket]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Sauce Labs Onesie]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Test.allTheThings() T-Shirt (Red)]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="loginTest()[pri:1, instance:com.sd.qa.testcases.LoginPageTest2@5454d35e]" started-at="2024-08-07T23:37:52Z" name="loginTest" finished-at="2024-08-07T23:37:53Z" duration-ms="534" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addToShoppingCartUsingDp_2 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.sd.qa.testcases.ProductsPageTest@22db8f4]" started-at="2024-07-25T18:13:29Z" name="tearDown" finished-at="2024-07-25T18:13:30Z" duration-ms="1271" status="PASS">
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.sd.qa.testcases.LoginPageTest2@5454d35e]" started-at="2024-08-07T23:37:53Z" name="tearDown" finished-at="2024-08-07T23:37:54Z" duration-ms="1611" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.sd.qa.testcases.ProductsPageTest@22db8f4]" started-at="2024-07-25T18:13:30Z" name="setUp" finished-at="2024-07-25T18:13:38Z" duration-ms="7935" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="addToShoppingCartUsingDp_2(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:5, instance:com.sd.qa.testcases.ProductsPageTest@22db8f4]" started-at="2024-07-25T18:13:38Z" name="addToShoppingCartUsingDp_2" data-provider="getItemsDataFromExcel_2" finished-at="2024-07-25T18:13:40Z" duration-ms="1630" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Sauce Labs Backpack]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Sauce Labs Bike Light]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Sauce Labs Bolt T-Shirt]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Sauce Labs Fleece Jacket]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Sauce Labs Onesie]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Test.allTheThings() T-Shirt (Red)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addToShoppingCartUsingDp_2 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.sd.qa.testcases.ProductsPageTest@22db8f4]" started-at="2024-07-25T18:13:40Z" name="tearDown" finished-at="2024-07-25T18:13:41Z" duration-ms="1218" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.sd.qa.testcases.ProductsPageTest -->
+      </class> <!-- com.sd.qa.testcases.LoginPageTest2 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
